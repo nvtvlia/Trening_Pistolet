@@ -7,8 +7,8 @@ const ASSETS = [
   './pneumat.html',
   './manifest.json',
   './css/style.css',
-  './obrazki/pistolet-192.jpg',
-  './obrazki/pistolet-512.jpg'
+  './obrazki/pistolet-192.png',
+  './obrazki/pistolet-512.png'
 ];
 
 self.addEventListener('install', (e) => {
