@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tarcza szybka - trening</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#121212">   
+</head>
+<body>
+  
+
+    <main>
+        <div id="light" class="signal-light red"></div>
+        
+        <div class="target-container">
+            <img src="obrazki/tarcza_czesc_szybka2.jpg" alt="Tarcza szybka" class="target-img">
+        </div>
+    
+    <details class="settings-panel">
+    <summary>Ustawienia Timera</summary>
+        <div class="settings-content">
+            <label>
+                Czas czerwony (sek):
+                <input type="number" id="redTimeInput" value="7" min="1" max="60">
+            </label>
+            <label>
+                Czas zielony (sek):
+                <input type="number" id="greenTimeInput" value="3" min="1" max="60">
+            </label>
+            <label>
+                Liczba cykli:
+                <input type="number" id="cyclesInput" value="5" min="1" max="100">
+                </label>
+                </div>
+            </details>
+        
+        
+            <nav class="menu" style="margin-top: 24px;">
+            <button id="startBtn" class="btn btn-action">Rozpocznij Cykl</button>
+            <button id="stopBtn" class="btn btn-danger" style="display: none;">Zatrzymaj</button>
+            <a href="index.html" class="btn"> Powrót do menu</a>
+        </nav>
+    </main>
+
+    
+    <!-- <script>
+        if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+        }
+    </script> -->
+
+    <script>
+  const light = document.getElementById('light');
+  const redTimeInput = document.getElementById('redTimeInput');
+  const greenTimeInput = document.getElementById('greenTimeInput');
+  const cyclesInput = document.getElementById('cyclesInput');
+  const startBtn = document.getElementById('startBtn');
+  const stopBtn = document.getElementById('stopBtn');
+
+  let currentCycle = 0;
+  let timeoutRef = null;
+
+  // 2. Funkcja do zatrzymywania
+  function stopCycle() {
+    clearTimeout(timeoutRef);
+    light.className = 'signal-light red';
+    startBtn.style.display = 'block';
+    stopBtn.style.display = 'none';
+  }
+
+  // 3. Główna funkcja startowa
+  function startCycle() {
+    currentCycle = 0;
+    startBtn.style.display = 'none';
+    stopBtn.style.display = 'block';
+
+    function runSequence() {
+      const redMs = parseInt(redTimeInput.value) * 1000;
+      const greenMs = parseInt(greenTimeInput.value) * 1000;
+      const maxCycles = parseInt(cyclesInput.value);
+
+      // Zapalamy czerwone
+      light.className = 'signal-light red';
+
+      // Czekamy czas czerwonego -> zmiana na zielony
+      timeoutRef = setTimeout(() => {
+        light.className = 'signal-light green';
+
+        // Czekamy czas zielonego -> zliczamy cykl i sprawdzamy warunek
+        timeoutRef = setTimeout(() => {
+          currentCycle++;
+
+          if (currentCycle < maxCycles) {
+            runSequence(); // Kolejny cykl
+          } else {
+            stopCycle(); // Osiągnięto limit - koniec treningu!
+          }
+        }, greenMs);
+
+      }, redMs);
+    }
+
+    runSequence();
+  }
+
+  // 4. Podpięcie zdarzeń do przycisków
+  startBtn.addEventListener('click', startCycle);
+  stopBtn.addEventListener('click', stopCycle);
+
+  // Service Worker (Twój oryginalny kod)
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
+
+    <footer>
+        <p>© 2026 Natalia Barszczewska</p>
+    </footer>
+</body>
+</html>

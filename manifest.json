@@ -1,0 +1,24 @@
+{
+  "name": "Trening Strzelecki na Sucho",
+  "short_name": "DryFire",
+  "description": "Aplikacja wspierająca trening na sucho z bronią",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "obrazki/pistolet.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "obrazki/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

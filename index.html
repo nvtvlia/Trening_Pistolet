@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trening Strzelecki na Sucho</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#121212">
+</head>
+<body>
+    <header>
+        <h1>Trening na Sucho</h1>
+        <p>Przygotowany dla zawodników - Gwardia 1924 Sosnowiec</p>
+    </header>
+
+    <main>
+        <nav class="menu">
+            <a href="dokladna.html" class="btn">Tarcza Dokładna</a>
+            <a href="szybka.html" class="btn">Tarcza Szybka</a>
+            <a href="pneumat.html" class="btn">Pneumatyk</a>
+        </nav>
+    </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker gotowy'))
+        .catch(err => console.error('Błąd Service Workera:', err));
+    }
+  </script>
+
+    <footer>
+        <p>© 2026 Natalia Barszczewska</p>
+    </footer>
+</body>
+
+</html>

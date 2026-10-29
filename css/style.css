@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #28282f;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+main {
+  width: 100%;
+  max-width: 400px;
+  flex:1;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px 35px;
+  background-color: #151519;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 1px solid #1f2034;
+  border-radius: 5px;
+  transition: background-color 0.2s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active {
+  background-color: #efa9e3;
+  transform: scale(0.98);
+}
+
+
+.target-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.target-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1px;
+}
+
+
+.signal-light {
+  width: 100%;
+  max-width: 100px;
+  height: 24px;
+  margin: 0 auto 5px auto;
+  border-radius: 5px;
+  transition: background-color;
+}
+
+.signal-light.red {
+  background-color: #ff3b30;
+  box-shadow: 0 0 8px rgba(255, 59, 48, 0.7);
+}
+
+.signal-light.green {
+  background-color: #34c759;
+  box-shadow: 0 0 8px rgba(52, 199, 89, 0.9);
+}
+
+.settings-panel {
+  background-color: #1e1f28;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.settings-panel summary {
+  padding: 14px;
+  font-weight: 5000;
+  cursor: pointer;
+}
+
+.settings-content {
+  padding: 10px;
+  border-top: 1px solid #333333;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings-content label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-content input[type="number"] {
+  width: 70px;
+  padding: 6px;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.btn-action { background-color: #233d58; }
+.btn-danger { background-color: #522320; }
+
+footer {
+    text-align: center;
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing:0.5px;
+
+}
+
