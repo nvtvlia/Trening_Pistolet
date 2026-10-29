@@ -74,6 +74,10 @@ main {
   border-radius: 1px;
 }
 
+.target-small {
+    max-width: 70%;
+}
+
 
 .signal-light {
   width: 100%;
